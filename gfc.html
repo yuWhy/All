@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .warp {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 200px calc(100% - 205px);
+            grid-template-rows: 100px calc(100% - 170px) 60px;
+            grid-gap: 5px;
+        }
+        .warp div { border: 1px solid aquamarine; }
+        .warp .g-1 { grid-column-start: 1; grid-column-end: 3; }
+        .warp .g-4 { grid-column-start: 1; grid-column-end: 3; }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div><p>1</p></div>
+    <div><p>2</p></div>
+    <div><p>3</p></div>
+    <div><p>4</p></div>
+    <div><p>5</p></div>
+    <div><p>6</p></div>
+    <div><p>7</p></div>
+    <div><p>8</p></div>
+    <div><p>9</p></div>
+</div>
+</body>
+</html>

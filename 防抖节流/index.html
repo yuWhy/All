@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖节流</title>
+</head>
+<body>
+    <p>防抖触发高频事件后n秒内函数只会执行一次，如果n秒内高频事件再次被触发，则重新计算时间<br></br>防抖就是在函数需要频繁触发情况时，只有足够空闲的时间，才执行一次（公交司机等人上齐后才出站）</p>
+    <button id="fangd">防抖</button>
+<script>
+    var fangdBtn = document.getElementById('fangd');
+    let ind = 1;
+    function debounce(fn) {
+        let timeout = null;
+        console.log(ind);
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(()=>{
+                fn.apply(this, arguments);
+            }, 500)
+        }
+    }
+    function fangdFn() {
+        console.log('fangd' + ind);
+        ind++;
+    }
+    fangdBtn.addEventListener('click', debounce(fangdFn));
+</script>
+</body>
+</html>
